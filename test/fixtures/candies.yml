@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  chocolate: 1
+  fruity: 1
+  caramel: 1
+  peanuty_almondy: 1
+  nougat: 1
+  crisped_rice_wafer: 1
+  hard: 1
+  bar: 1
+
+two:
+  name: MyString
+  chocolate: 1
+  fruity: 1
+  caramel: 1
+  peanuty_almondy: 1
+  nougat: 1
+  crisped_rice_wafer: 1
+  hard: 1
+  bar: 1
