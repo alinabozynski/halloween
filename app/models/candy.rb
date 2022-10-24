@@ -1,3 +1,3 @@
 class Candy < ApplicationRecord
-  belongs_to :sugar
+  has_one :Sugar
 end

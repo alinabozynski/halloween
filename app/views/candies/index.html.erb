@@ -1,0 +1,31 @@
+<h1>Candies</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Chocolate</th>
+		<th>Fruity</th>
+		<th>Caramel</th>
+		<th>Peanuty/Almondy</th>
+		<th>Nougat</th>
+		<th>Crisped Rice Wafer</th>
+		<th>Hard</th>
+		<th>Bar</th>
+		<th>Sugar Percentage</th>
+	</tr>
+
+<% @candies.each do |candy| %>
+	<tr>
+		<td><%= link_to candy.name, candies_path(candy.id) %></td>
+		<td><%= candy.chocolate %></td>
+		<td><%= candy.fruity %></td>
+		<td><%= candy.caramel %></td>
+		<td><%= candy.peanuty_almondy %></td>
+		<td><%= candy.nougat %></td>
+		<td><%= candy.crisped_rice_wafer %></td>
+		<td><%= candy.hard %></td>
+		<td><%= candy.bar %></td>
+		<td><%= candy.sugar_percentage %></td>
+	</tr>
+<% end %>
+</table>
+

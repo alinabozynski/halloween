@@ -1,3 +1,3 @@
 class Sugar < ApplicationRecord
-  has_many :candy
+  has_many :candies
 end
