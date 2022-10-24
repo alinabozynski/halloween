@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sugar_percentage: 9.99
+
+two:
+  sugar_percentage: 9.99
