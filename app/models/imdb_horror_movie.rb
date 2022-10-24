@@ -1,0 +1,2 @@
+class ImdbHorrorMovie < ApplicationRecord
+end
