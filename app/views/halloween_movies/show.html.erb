@@ -1,2 +1,2 @@
-<h1>HalloweenMovies#show</h1>
-<p>Find me in app/views/halloween_movies/show.html.erb</p>
+<h1><%= @halloween_movie.title %></h1>
+<p><%= image_tag(url_for(@halloween_movie.image), style: 'height:35vw;width:28vw') %></p>

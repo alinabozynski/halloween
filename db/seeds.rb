@@ -27,7 +27,7 @@ end
 halloween_movies_file = Rails.root.join('db/halloween_movies.csv')
 halloween_movies_data = File.read(halloween_movies_file)
 
-halloween_movies = CSV.parse(halloween_movies_data, headers: true, encoding: 'iso-8559-1')
+halloween_movies = CSV.parse(halloween_movies_data, headers: true)
 
 halloween_movies.each do |halloween_movie|
   HalloweenMovie.create(

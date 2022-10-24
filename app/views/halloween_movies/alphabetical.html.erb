@@ -1,2 +1,9 @@
-<h1>HalloweenMovies#alphabetical</h1>
-<p>Find me in app/views/halloween_movies/alphabetical.html.erb</p>
+<h1>Halloween Movies in Alphabetical Order</h1>
+<table>
+  <% @halloween_movies.each do |halloween_movie| %>
+    <tr>
+      <th><%= link_to halloween_movie.title, halloween_movie_path(halloween_movie.id) %></th>
+      <th><%= image_tag(url_for(halloween_movie.image), style: 'height:5vw;width:7vw') %></th>
+    </tr>
+  <% end %>
+</table>
