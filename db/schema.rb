@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_24_205643) do
+ActiveRecord::Schema.define(version: 2022_10_24_230200) do
 
   create_table "candies", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2022_10_24_205643) do
     t.decimal "sugar_percentage"
     t.integer "sugar_id"
     t.index ["sugar_id"], name: "index_candies_on_sugar_id"
+  end
+
+  create_table "halloween_movies", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sugars", force: :cascade do |t|

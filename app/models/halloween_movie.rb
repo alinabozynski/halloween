@@ -1,0 +1,2 @@
+class HalloweenMovie < ApplicationRecord
+end
