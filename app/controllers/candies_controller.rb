@@ -8,34 +8,42 @@ class CandiesController < ApplicationController
   end
 
   def chocolate
-    @candies = Candy.where("chocolate = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("chocolate = 1")
   end
 
   def fruity
-    @candies = Candy.where("fruity = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("fruity = 1")
   end
 
-  def caramel
-    @candies = Candy.where("caramel = 1")
+  def caramel	
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("caramel = 1")
   end
 
   def peanuty_almondy
-    @candies = Candy.where("peanuty_almondy = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("peanuty_almondy = 1")
   end
 
   def nougat
-    @candies = Candy.where("nougat = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("nougat = 1")
   end
 
   def crisped_rice_wafer
-    @candies = Candy.where("crisped_rice_wafer = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("crisped_rice_wafer = 1")
   end
 
   def hard
-    @candies = Candy.where("hard = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("hard = 1")
   end
 
   def bar
-    @candies = Candy.where("bar = 1")
+    @all = Candy.includes(:Sugar).all
+    @candies = @all.where("bar = 1")
   end
 end
