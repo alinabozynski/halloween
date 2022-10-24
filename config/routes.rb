@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'halloween_movies/index'
+  get 'halloween_movies/show'
+  get 'halloween_movies/alphabetical'
   get 'candies/', to: 'candies#index'
   get 'candies/:id', to: 'candies#show', as: 'candy'
   get 'candies/chocolate', to: 'candies#chocolate'
