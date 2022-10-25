@@ -24,6 +24,8 @@ candies.each do |candy|
     sugar_percentage: Sugar.where(:sugar_percentage => sugar.sugar_percentage).first.sugar_percentage)
 end
 
+HalloweenMovie.destroy_all
+
 halloween_movies_file = Rails.root.join('db/halloween_movies.csv')
 halloween_movies_data = File.read(halloween_movies_file)
 
