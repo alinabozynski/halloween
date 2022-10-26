@@ -36,3 +36,25 @@ halloween_movies.each do |halloween_movie|
     title: halloween_movie['Movie'],
     image: halloween_movie['Image URL'])
 end
+
+ImdbHorrorMovie.destroy_all
+ReleaseDate.destroy_all
+
+imdb_movies_file = Rails.root.join('db/imdb_horror.csv')
+imdb_movies_data = File.read(imdb_movies_file)
+
+imdb_movies = CSV.parse(imdb_movies_data, headers: true)
+
+imdb_movies.each do |imdb_movie|
+  release = ReleaseDate.find_or_create_by(release_date: imdb_movie['Release Date'])
+
+  ImdbHorrorMovie.create(
+    title: imdb_movie['Title'],
+    release_country: imdb_movie['Release Country'],
+    rating: imdb_movie['Review Rating'],
+    run_time: imdb_movie['Movie Run Time'],
+    plot: imdb_movie['plot'],
+    language: imdb_movie['Language'],
+    release_date: ReleaseDate.where(:release_date => release.release_date).first.release_date)
+end
+    

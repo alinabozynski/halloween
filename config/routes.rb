@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'imdb_horror_movies/index'
+  get 'imdb_horror_movies/show'
+  get 'imdb_horror_movies/ratings'
   get 'halloween_movies/',to: 'halloween_movies#index'
   get 'halloween_movies/:id',to: 'halloween_movies#show', as: 'halloween_movie'
   get 'halloween_movies/alphabetical', to: 'halloween_movies#alphabetial'

@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 2022_10_24_234900) do
     t.string "language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "release_date_id", null: false
+    t.string "release_date"
+    t.integer "release_date_id"
     t.index ["release_date_id"], name: "index_imdb_horror_movies_on_release_date_id"
   end
 
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 2022_10_24_234900) do
     t.string "release_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "imdb_horror_movie_id" 
+    t.index ["imdb_horror_movie_id"], name: "index_release_dates_on_imdb_horror_movie_id"
   end
 
   create_table "sugars", force: :cascade do |t|
