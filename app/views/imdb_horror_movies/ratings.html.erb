@@ -1,2 +1,22 @@
 <h1>ImdbHorrorMovies#ratings</h1>
-<p>Find me in app/views/imdb_horror_movies/ratings.html.erb</p>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Release Date</th>
+		<th>Release Country</th>
+		<th>Rating</th>
+		<th>Run Time</th>
+		<th>Language</th>
+	</tr>
+
+<% @imdb_movies.each do |imdb_movie| %>
+	<tr>
+		<td><%= link_to imdb_movie.title, imdb_horror_movies_show_path(imdb_movie.id) %></td>
+		<td><%= imdb_movie.release_date %></td>	
+		<td><%= imdb_movie.release_country %></td>
+		<td><%= imdb_movie.rating %></td>
+		<td><%= imdb_movie.run_time %></td>
+		<td><%= imdb_movie.language %></td>
+	</tr>
+<% end %>
+</table>

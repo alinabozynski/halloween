@@ -1,2 +1,9 @@
-<h1>ImdbHorrorMovies#show</h1>
-<p>Find me in app/views/imdb_horror_movies/show.html.erb</p>
+<h1><%= @imdb_movie.title %></h1>
+
+<ul>
+  <li>Release Date: <%= @imdb_movie.release_date %></li>
+  <li>Release Country: <%= @imdb_movie.release_country %></li>
+  <li>Rating: <%= @imdb_movie.rating %></li>
+  <li>Run Time: <%= @imdb_movie.run_time %></li>
+  <li>Language: <%= @imdb_movie.language %></li>
+</ul>
