@@ -1,0 +1,20 @@
+<h1>Halloween Movies</h1>
+<div>
+  <form action="/halloween_movie/search">
+    <input type="text" placeholder="Movie Name" name ="s" required>
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<% if (@halloween_movies.count > 0) %>
+  <table>
+    <% @halloween_movies.each do |halloween_movie| %>
+      <tr>
+        <th><%= link_to halloween_movie.title, halloween_movie_path(halloween_movie.id) %></th>
+        <th><%= image_tag(url_for(halloween_movie.image), style: 'height:25vw;width:20vw') %></th>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <h2>No Search Results</h2>
+<% end %>

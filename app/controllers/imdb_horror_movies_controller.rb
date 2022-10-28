@@ -3,6 +3,10 @@ class ImdbHorrorMoviesController < ApplicationController
     @imdb_movies = ImdbHorrorMovie.includes(:ReleaseDate).all
   end
 
+  def search 
+    @imdb_movies = ImdbHorrorMovie.where("title LIKE ?", "%" + params[:s] + "%")
+  end
+
   def show
     @imdb_movie = ImdbHorrorMovie.find(params[:id])
   end

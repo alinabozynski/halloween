@@ -3,6 +3,10 @@ class HalloweenMoviesController < ApplicationController
     @halloween_movies = HalloweenMovie.all
   end
 
+  def search
+    @halloween_movies = HalloweenMovie.where("title LIKE ?", "%" + params[:s] + "%")
+  end
+
   def show
     @halloween_movie = HalloweenMovie.find(params[:id])
   end

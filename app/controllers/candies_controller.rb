@@ -3,6 +3,10 @@ class CandiesController < ApplicationController
     @candies = Candy.includes(:Sugar).all
   end
 
+  def search 
+    @candies = Candy.where("name LIKE ?", "%" + params[:s] + "%")
+  end
+
   def show
     @candy = Candy.find(params[:id])
   end

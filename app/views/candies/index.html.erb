@@ -1,6 +1,12 @@
 <h1>Candies</h1>
-<h4>Lists: <%= link_to 'Chocolate Candies', candies_chocolate_path %> <%= link_to 'Fruity Candy', candies_fruity_path %> <%= link_to 'Caramel Candies', candies_caramel_path %> <%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h4> 
-<h4><%= link_to 'Nougat Candies', candies_nougat_path %> <%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %> <%= link_to 'Hard Candies', candies_hard_path %> <%= link_to 'Candy Bars', candies_bar_path %></h4>
+<div>
+  <h4>Lists: <%= link_to 'Chocolate Candies', candies_chocolate_path %> <%= link_to 'Fruity Candy', candies_fruity_path %> <%= link_to 'Caramel Candies', candies_caramel_path %> <%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h4> 
+  <h4><%= link_to 'Nougat Candies', candies_nougat_path %> <%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %> <%= link_to 'Hard Candies', candies_hard_path %> <%= link_to 'Candy Bars', candies_bar_path %></h4>
+  <form action="/candy/search">
+    <input type="text" placeholder="Candy Name" name ="s" required>
+    <button type="submit">Search</button>
+  </form>
+</div>
 <table>
 	<tr>
 		<th>Name</th>
