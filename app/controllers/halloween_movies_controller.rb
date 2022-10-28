@@ -1,10 +1,10 @@
 class HalloweenMoviesController < ApplicationController
   def index
-    @halloween_movies = HalloweenMovie.all
+    @halloween_movies = HalloweenMovie.all.all.page(params[:page])
   end
 
   def search
-    @halloween_movies = HalloweenMovie.where("title LIKE ?", "%" + params[:s] + "%")
+    @halloween_movies = HalloweenMovie.where("title LIKE ?", "%" + params[:s] + "%").all.page(params[:page])
   end
 
   def show
@@ -12,7 +12,7 @@ class HalloweenMoviesController < ApplicationController
   end
 
   def alphabetical
-    @all_movies = HalloweenMovie.all
+    @all_movies = HalloweenMovie.all.all.page(params[:page])
     @halloween_movies = @all_movies.order(:title)
   end
 end

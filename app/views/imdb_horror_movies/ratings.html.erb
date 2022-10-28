@@ -1,3 +1,4 @@
+<% paginate @imdb_movies %>
 <h1>ImdbHorrorMovies#ratings</h1>
 <table>
 	<tr>
@@ -11,7 +12,7 @@
 
 <% @imdb_movies.each do |imdb_movie| %>
 	<tr>
-		<td><%= link_to imdb_movie.title, imdb_horror_movies_show_path(imdb_movie.id) %></td>
+		<td><%= link_to imdb_movie.title, imdb_horror_movie_path(imdb_movie.id) %></td>
 		<td><%= imdb_movie.release_date %></td>	
 		<td><%= imdb_movie.release_country %></td>
 		<td><%= imdb_movie.rating %></td>
