@@ -53,7 +53,6 @@ imdb_movies.each do |imdb_movie|
     release_country: imdb_movie['Release Country'],
     rating: imdb_movie['Review Rating'],
     run_time: imdb_movie['Movie Run Time'],
-    plot: imdb_movie['plot'],
     language: imdb_movie['Language'],
     release_date: ReleaseDate.where(:release_date => release.release_date).first.release_date)
 end

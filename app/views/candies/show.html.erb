@@ -1,6 +1,6 @@
-<% paginate @candies %>
 <h1><%= @candy.name %></h1>
-
+<h3><%= link_to 'All Candies', candies_path %></h3>
+<h3><%= link_to 'View Candies with the same Sugar Percentage', candies_search_path(:s => "", :sugar_percentage => @candy.sugar_percentage) %></h3>
 <ul>
   <li>Chocolate: <%= @candy.chocolate %></li>
   <li>Fruity: <%= @candy.fruity %></li>

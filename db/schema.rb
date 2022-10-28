@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_10_26_061208) do
     t.integer "bar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "sugar_percentage"
+    t.decimal "sugar_percentage", precision: 4, scale: 4
     t.integer "sugar_id"
     t.index ["sugar_id"], name: "index_candies_on_sugar_id"
   end

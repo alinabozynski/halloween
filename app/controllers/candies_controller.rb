@@ -5,6 +5,7 @@ class CandiesController < ApplicationController
 
   def search 
     @candies = Candy.where("name LIKE ?", "%" + params[:s] + "%").all.page(params[:page])
+    @candies = Candy.where("sugar_percentage LIKE ?", params[:sugar]).all.page(params[:page])
   end
 
   def show

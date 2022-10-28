@@ -16,7 +16,7 @@
 
 <% @candies.each do |candy| %>
 	<tr>
-		<td><%= link_to candy.name, candies_path(candy.id) %></td>
+		<td><%= link_to candy.name, candy_path(candy.id) %></td>
 		<td><%= candy.chocolate %></td>
 		<td><%= candy.fruity %></td>
 		<td><%= candy.caramel %></td>
