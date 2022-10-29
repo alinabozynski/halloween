@@ -1,5 +1,5 @@
-<% paginate @candies %>
 <h1>Hard Candies</h1>
+<%= link_to 'All Candies', candies_path %>
 <table>
 	<tr>
 		<th>Name</th>
@@ -29,3 +29,4 @@
 	</tr>
 <% end %>
 </table>
+<%= paginate @candies %>

@@ -1,7 +1,7 @@
 class Candy < ApplicationRecord
   has_one :Sugar
 
-  paginates_per 100  
+  paginates_per 25  
 
   validates :name, presence: true
   validates :chocolate, numericality: { only_integer: true }

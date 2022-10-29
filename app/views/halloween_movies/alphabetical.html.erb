@@ -1,5 +1,5 @@
-<% paginate @halloween_movies %>
 <h1>Halloween Movies in Alphabetical Order</h1>
+<h3><%= link_to 'Back to All Halloween Movies', halloween_movies_path %></h3>
 <table>
   <% @halloween_movies.each do |halloween_movie| %>
     <tr>
@@ -8,3 +8,4 @@
     </tr>
   <% end %>
 </table>
+<%= paginate @halloween_movies %>

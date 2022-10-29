@@ -1,5 +1,5 @@
 class ImdbHorrorMovie < ApplicationRecord
-  paginates_per 20
+  paginates_per 25
 
   has_one :ReleaseDate
 

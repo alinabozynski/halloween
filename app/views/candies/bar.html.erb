@@ -1,6 +1,5 @@
-
-<% paginate @candies %>
 <h1>Candies in Bar Form</h1>
+<%= link_to 'All Candies', candies_path %>
 <table>
 	<tr>
 		<th>Name</th>
@@ -30,3 +29,4 @@
 	</tr>
 <% end %>
 </table>
+<%= paginate @candies %>

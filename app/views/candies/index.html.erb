@@ -5,42 +5,41 @@
   <h1>Candies</h1>
 </header>
 <div>
-  <% paginate @candies %>
   <h4>Lists: <%= link_to 'Chocolate Candies', candies_chocolate_path %> <%= link_to 'Fruity Candy', candies_fruity_path %> <%= link_to 'Caramel Candies', candies_caramel_path %> <%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h4> 
   <h4><%= link_to 'Nougat Candies', candies_nougat_path %> <%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %> <%= link_to 'Hard Candies', candies_hard_path %> <%= link_to 'Candy Bars', candies_bar_path %></h4>
   <form action="/candies/search">
-    <input type="text" placeholder="Candy Name" name ="s">
-    <p><%= collection_select(:sugar, :candy_sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :name => 'sugar_percentage' } ) %></p>
+    <input type="text" placeholder="Candy Name" name ="candy_name">
+    <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
     <button type="submit">Search</button>
   </form>
 </div>
 <table>
-	<tr>
-		<th>Name</th>
-		<th>Chocolate</th>
-		<th>Fruity</th>
-		<th>Caramel</th>
-		<th>Peanuty/Almondy</th>
-		<th>Nougat</th>
-		<th>Crisped Rice Wafer</th>
-		<th>Hard</th>
-		<th>Bar</th>
-		<th>Sugar Percentage</th>
-	</tr>
+  <tr>
+    <th>Name</th>
+    <th>Chocolate</th>
+    <th>Fruity</th>
+    <th>Caramel</th>
+    <th>Peanuty/Almondy</th>
+    <th>Nougat</th>
+    <th>Crisped Rice Wafer</th>
+    <th>Hard</th>
+    <th>Bar</th>
+    <th>Sugar Percentage</th>
+  </tr>
 
-<% @candies.each do |candy| %>
-	<tr>
-		<td><%= link_to candy.name, candy_path(candy.id) %></td>
-		<td><%= candy.chocolate %></td>
-		<td><%= candy.fruity %></td>
-		<td><%= candy.caramel %></td>
-		<td><%= candy.peanuty_almondy %></td>
-		<td><%= candy.nougat %></td>
-		<td><%= candy.crisped_rice_wafer %></td>
-		<td><%= candy.hard %></td>
-		<td><%= candy.bar %></td>
-		<td><%= candy.sugar_percentage %></td>
-	</tr>
-<% end %>
+  <% @candies.each do |candy| %>
+    <tr>
+      <td><%= link_to candy.name, candy_path(candy.id) %></td>
+      <td><%= candy.chocolate %></td>
+      <td><%= candy.fruity %></td>
+      <td><%= candy.caramel %></td>
+      <td><%= candy.peanuty_almondy %></td>
+      <td><%= candy.nougat %></td>
+      <td><%= candy.crisped_rice_wafer %></td>
+      <td><%= candy.hard %></td>
+      <td><%= candy.bar %></td>
+      <td><%= candy.sugar_percentage %></td>
+    </tr>
+  <% end %>
 </table>
-
+<%= paginate @candies %>

@@ -1,4 +1,3 @@
-<% paginate @halloween_movies %>
 <h1>Halloween Movies</h1>
 <div>
   <form action="/halloween_movie/search">
@@ -16,6 +15,7 @@
       </tr>
     <% end %>
   </table>
+<%= paginate @halloween_movies %>
 <% else %>
   <h2>No Search Results</h2>
 <% end %>

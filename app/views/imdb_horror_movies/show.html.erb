@@ -1,5 +1,5 @@
 <h1><%= @imdb_movie.title %></h1>
-
+<h3><%= link_to 'Back to All IMDB Horror Movies', imdb_horror_movies_path %></h3>
 <ul>
   <li>Release Date: <%= @imdb_movie.release_date %></li>
   <li>Release Country: <%= @imdb_movie.release_country %></li>

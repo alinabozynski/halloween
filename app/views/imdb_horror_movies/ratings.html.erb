@@ -1,5 +1,5 @@
-<% paginate @imdb_movies %>
-<h1>ImdbHorrorMovies#ratings</h1>
+<h1>ImdbHorrorMovies by Rating</h1>
+<h3><%= link_to 'Back to All IMDB Horror Movies', imdb_horror_movies_path %></h3>
 <table>
 	<tr>
 		<th>Title</th>
@@ -21,3 +21,4 @@
 	</tr>
 <% end %>
 </table>
+<%= paginate @imdb_movies %>

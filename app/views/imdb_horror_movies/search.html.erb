@@ -1,5 +1,5 @@
-<% paginate @imdb_movies %>
 <h1>Imdb Horror Movies</h1>
+<h3><%= link_to 'Back to All IMDB Horror Movies', imdb_horror_movies_path %></h3>
 <div>
   <h4>Lists: <%= link_to 'Organized by Rating', imdb_horror_movies_ratings_path %></h4> 
   <form action="/imdb_horror_movie/search">
@@ -29,6 +29,7 @@
       </tr>
     <% end %>
   </table>
+<%= paginate @imdb_movies %>
 <% else %>
   <h2>No Search Results</h2>
 <% end %>
