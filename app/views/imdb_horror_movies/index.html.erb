@@ -1,12 +1,15 @@
-<h1>Imdb Horror Movies</h1>
-<div>
-  <h4>Lists: <%= link_to 'Organized by Rating', imdb_horror_movies_ratings_path %></h4> 
-  <form action="/imdb_horror_movie/search">
-    <input type="text" placeholder="IDMB Horror Movie Name" name="title">
-    <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
-    <button type="submit">Search</button>
-  </form>
-</div>
+<header>
+  <h1>Imdb Horror Movies</h1>
+  <div>
+    <h3><%= link_to 'Organized by Rating', imdb_horror_movies_ratings_path %></h3>
+    <h3><%= link_to 'Home', home_path %></h3> 
+    <form action="/imdb_horror_movie/search">
+      <input type="text" placeholder="IDMB Horror Movie Name" name="title">
+      <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
 <table>
 	<tr>
 		<th>Title</th>

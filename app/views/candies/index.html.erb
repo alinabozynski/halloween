@@ -3,16 +3,23 @@
 </head>
 <header>
   <h1>Candies</h1>
+  <div>
+    <h3><%= link_to 'Chocolate Candies', candies_chocolate_path %></h3> 
+    <h3><%= link_to 'Fruity Candy', candies_fruity_path %></h3> 
+    <h3><%= link_to 'Caramel Candies', candies_caramel_path %></h3> 
+    <h3><%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h3> 
+    <h3><%= link_to 'Nougat Candies', candies_nougat_path %></h3> 
+    <h3><%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %></h3> 
+    <h3><%= link_to 'Hard Candies', candies_hard_path %></h3> 
+    <h3><%= link_to 'Candy Bars', candies_bar_path %></h3>
+    <h3><%= link_to 'Home', home_path %></h3>
+    <form action="/candies/search">
+      <input type="text" placeholder="Candy Name" name ="candy_name">
+      <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
+      <button type="submit">Search</button>
+    </form>
+  </div>
 </header>
-<div>
-  <h4>Lists: <%= link_to 'Chocolate Candies', candies_chocolate_path %> <%= link_to 'Fruity Candy', candies_fruity_path %> <%= link_to 'Caramel Candies', candies_caramel_path %> <%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h4> 
-  <h4><%= link_to 'Nougat Candies', candies_nougat_path %> <%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %> <%= link_to 'Hard Candies', candies_hard_path %> <%= link_to 'Candy Bars', candies_bar_path %></h4>
-  <form action="/candies/search">
-    <input type="text" placeholder="Candy Name" name ="candy_name">
-    <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
-    <button type="submit">Search</button>
-  </form>
-</div>
 <table>
   <tr>
     <th>Name</th>

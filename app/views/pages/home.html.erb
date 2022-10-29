@@ -1,0 +1,52 @@
+<header>
+  <h1>A Heap of Halloween</h1>
+  <div>
+    <h3><%= link_to 'Candies', candies_path %></h3>
+    <h3><%= link_to 'Movies', movies_path %></h3>
+  </div>
+</header>
+<p>Everything here is Halloween-related! Appropriate, if you ask me ;) So, here lies all the candy and Halloween-themed movies you can think of.</p>
+<p>Each of the three datasets have their own page. The two categories of data (links above) can be chosen from the home page (here). On the movies page, there are two links, one to each of the datasets. </p>
+<h2>The Candy Dataset</h2>
+<p>A database table has been created for the Candy dataset. Each candy has the following fields (columns):</p>
+<ul>
+  <li>name (string)</li>
+  <li>chocolate (integer)</li>
+  <li>fruity (integer)</li>
+  <li>caramel (integer)</li>
+  <li>peanuty_almondy (integer)</li>
+  <li>nougat (integer)</li>
+  <li>crisped_rice_wafer (integer)</li>
+  <li>hard (integer)</li>
+  <li>bar (integer)</li>
+  <li>Includes: created_at/updated_at (datetime)</li>
+  <li>sugar_percentage (decimal)</li>
+  <li>sugar_id (integer & index)</li>
+</ul>
+<p>Note: the integer values for the Candy dataset are 1s and 0s with 1 meaning true and 0 meaning false.</p>
+<p>A Sugar database table has also been created to hold sugar_percentage values that are associated with Candies.</p>
+<p>Users will be able to search the database by candy name and restrict their search to a certain sugar percentage. The different categories of candies (1s and 0s columns) will have different links (pages) as well.</p>
+
+<h2>The Halloween Movies Dataset</h2>
+<p>The HalloweenMovie database table contains the following columns:</p>
+<ul>
+  <li>title (string)</li>
+  <li>image (string - they are URLs)</li>
+  <li>Includes: created_at/updated_at (datetime)</li>
+</ul>
+<p>Users may search the database by movie name. An alphabetical list will also be available as a link (separate page).</p>
+
+<h2>The IMDB Horror Movies Dataset</h2>
+<p>A database table was created for the IMDB Horror Movies dataset with the following columns:</p>
+<ul>
+  <li>title (string)</li>
+  <li>release_country (string)</li>
+  <li>rating (decimal)</li>
+  <li>run_time (string)</li>
+  <li>language (string)</li>
+  <li>Includes: created_at/updated_at (datetime)</li>
+  <li>release_date (string)</li>
+  <li>release_date_id (integer & index)</li>
+</ul>
+<p>A ReleaseDate database table was created to hold release_dates associated with IMDBHorrorMovies.</p>
+<p>Users may search the database by movie name and restrict their search to an associated release_date.There will also be a link (page) to view this list by rating (highgest to lowest).</p>

@@ -1,11 +1,14 @@
-<h1>Halloween Movies</h1>
-<div>
-  <h4><%= link_to "Alphabetical List", halloween_movies_alphabetical_path %></h4>
-  <form action="/halloween_movie/search">
-    <input type="text" placeholder="Movie Name" name="title" required>
-    <button type="submit">Search</button>
-  </form>
-</div>
+<header>
+  <h1>Halloween Movies</h1>
+  <div>
+    <h3><%= link_to "Alphabetical List", halloween_movies_alphabetical_path %></h3>
+    <h3><%= link_to 'Home', home_path %></h3>
+    <form action="/halloween_movie/search">
+      <input type="text" placeholder="Movie Name" name="title" required>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
 <table>
   <% @halloween_movies.each do |halloween_movie| %>
     <tr>
