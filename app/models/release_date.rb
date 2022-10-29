@@ -1,3 +1,3 @@
 class ReleaseDate < ApplicationRecord
-  has_one :ImdbHorrorMovie
+  has_many :ImdbHorrorMovie
 end

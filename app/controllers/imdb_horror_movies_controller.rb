@@ -4,7 +4,7 @@ class ImdbHorrorMoviesController < ApplicationController
   end
 
   def search 
-    @imdb_movies = ImdbHorrorMovie.where("title LIKE ?", "%" + params[:s] + "%").all.page(params[:page])
+    @imdb_movies = ImdbHorrorMovie.where("title LIKE ? AND release_date LIKE ?", "%" + params[:title] + "%", params[:ImdbHorrorMovie][:release_date]).all.page(params[:page])
   end
 
   def show

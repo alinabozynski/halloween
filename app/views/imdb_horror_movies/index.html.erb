@@ -2,7 +2,8 @@
 <div>
   <h4>Lists: <%= link_to 'Organized by Rating', imdb_horror_movies_ratings_path %></h4> 
   <form action="/imdb_horror_movie/search">
-    <input type="text" placeholder="IDMB Horror Movie Name" name ="s" required>
+    <input type="text" placeholder="IDMB Horror Movie Name" name="title">
+    <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
     <button type="submit">Search</button>
   </form>
 </div>
