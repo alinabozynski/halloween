@@ -6,7 +6,7 @@
         <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
         <form action="/imdb_horror_movie/search" class="is-flex">
             <input type="text" placeholder="IDMB Horror Movie Name" name="title">
-            <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
+            <span><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all.order(release_date: :desc).select(:release_date).distinct, :release_date, :release_date, prompt: 'Release Date') %></span>
             <button type="submit">Search</button>
         </form>
     </div>

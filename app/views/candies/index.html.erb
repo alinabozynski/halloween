@@ -6,7 +6,7 @@
         <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
         <form action="/candies/search" class="is-flex">
             <input type="text" placeholder="Candy Name" name="candy_name">
-            <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
+            <span><%= collection_select(:candy, :sugar_percentage, Candy.all.order(sugar_percentage: :asc).select(:sugar_percentage).distinct, :sugar_percentage, :sugar_percentage, prompt: 'Sugar Percentage') %></span>
             <button type="submit">Search</button>
         </form>
     </div>
