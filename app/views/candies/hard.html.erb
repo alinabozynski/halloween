@@ -1,37 +1,45 @@
-<header>
-  <h1>Hard Candies</h1>
-  <div>
-    <h3><%= link_to 'All Candies', candies_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1">Hard Candies</h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'All Candies', candies_path %></h4>
+        </div>
+    </div>
 </header>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Chocolate</th>
-		<th>Fruity</th>
-		<th>Caramel</th>
-		<th>Peanuty/Almondy</th>
-		<th>Nougat</th>
-		<th>Crisped Rice Wafer</th>
-		<th>Hard</th>
-		<th>Bar</th>
-		<th>Sugar Percentage</th>
+<div class="container">
+    <table class="table">
+        <tr>
+	    <th>Name</th>
+	    <th>Chocolate</th>
+	    <th>Fruity</th>
+	    <th>Caramel</th>
+	    <th>Peanuty/Almondy</th>
+	    <th>Nougat</th>
+	    <th>Crisped Rice Wafer</th>
+	    <th>Hard</th>
+	    <th>Bar</th>
+	    <th>Sugar Percentage</th>
 	</tr>
 
-<% @candies.each do |candy| %>
+    <% @candies.each do |candy| %>
 	<tr>
-		<td><%= link_to candy.name, candy_path(candy.id) %></td>
-		<td><%= candy.chocolate %></td>
-		<td><%= candy.fruity %></td>
-		<td><%= candy.caramel %></td>
-		<td><%= candy.peanuty_almondy %></td>
-		<td><%= candy.nougat %></td>
-		<td><%= candy.crisped_rice_wafer %></td>
-		<td><%= candy.hard %></td>
-		<td><%= candy.bar %></td>
-		<td><%= candy.sugar_percentage %></td>
+	    <td><%= link_to candy.name, candy_path(candy.id) %></td>
+	    <td><%= candy.chocolate %></td>
+	    <td><%= candy.fruity %></td>
+	    <td><%= candy.caramel %></td>
+	    <td><%= candy.peanuty_almondy %></td>
+	    <td><%= candy.nougat %></td>
+	    <td><%= candy.crisped_rice_wafer %></td>
+	    <td><%= candy.hard %></td>
+	    <td><%= candy.bar %></td>
+	    <td><%= candy.sugar_percentage %></td>
 	</tr>
-<% end %>
-</table>
-<%= paginate @candies %>
+    <% end %>
+    </table>
+    <%= paginate @candies %>
+</div>

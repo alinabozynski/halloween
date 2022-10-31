@@ -1,14 +1,24 @@
-<header>
-  <h1><%= @imdb_movie.title %></h1>
-  <div>
-    <h3><%= link_to 'Back to All IMDB Horror Movies', imdb_horror_movies_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1"><%= @imdb_movie.title %></h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Back to All IMDB Horror Movies', imdb_horror_movies_path %></h4>
+        </div>
+    </div>
 </header>
-<ul>
-  <li>Release Date: <%= @imdb_movie.release_date %></li>
-  <li>Release Country: <%= @imdb_movie.release_country %></li>
-  <li>Rating: <%= @imdb_movie.rating %></li>
-  <li>Run Time: <%= @imdb_movie.run_time %></li>
-  <li>Language: <%= @imdb_movie.language %></li>
-</ul>
+<div class="content">
+    <div class="container">
+        <ul>
+            <li>Release Date: <%= @imdb_movie.release_date %></li>
+            <li>Release Country: <%= @imdb_movie.release_country %></li>
+            <li>Rating: <%= @imdb_movie.rating %></li>
+            <li>Run Time: <%= @imdb_movie.run_time %></li>
+            <li>Language: <%= @imdb_movie.language %></li>
+        </ul>
+    </div>
+</div>

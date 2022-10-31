@@ -1,20 +1,31 @@
-<header>
-  <h1><%= @candy.name %></h1>
-  <div>
-    <h3><%= link_to 'View Candies with the same Sugar Percentage', candies_search_path(:candy_name => "", :candy => {:sugar_percentage => @candy.sugar_percentage}) %></h3>
-    <h3><%= link_to 'Back to All Candies', candies_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-  </div>
-</header>
-<ul>
-  <li>Chocolate: <%= @candy.chocolate %></li>
-  <li>Fruity: <%= @candy.fruity %></li>
-  <li>Caramel: <%= @candy.caramel %></li>
-  <li>Peanuty/Almondy: <%= @candy.peanuty_almondy %></li>
-  <li>Nougat: <%= @candy.nougat %></li>
-  <li>Crisped Rice Wafer: <%= @candy.crisped_rice_wafer %></li>
-  <li>Hard: <%= @candy.hard %></li>
-  <li>Bar: <%= @candy.bar %></li>
-  <li>Sugar Percentage: <%= @candy.sugar_percentage %></li>
-</ul>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
+    <div class="level">
+        <h1 class="title is-1"><%= @candy.name %></h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'View Candies with the same Sugar Percentage', candies_search_path(:candy_name => "", :candy => {:sugar_percentage => @candy.sugar_percentage}) %></h4>
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Back to All Candies', candies_path %></h4>
+        </div>
+    </div>
+</header>
+<div class="content">
+    <div class="container">
+        <ul>
+            <li>Chocolate: <%= @candy.chocolate %></li>
+            <li>Fruity: <%= @candy.fruity %></li>
+            <li>Caramel: <%= @candy.caramel %></li>
+            <li>Peanuty/Almondy: <%= @candy.peanuty_almondy %></li>
+            <li>Nougat: <%= @candy.nougat %></li>
+            <li>Crisped Rice Wafer: <%= @candy.crisped_rice_wafer %></li>
+            <li>Hard: <%= @candy.hard %></li>
+            <li>Bar: <%= @candy.bar %></li>
+            <li>Sugar Percentage: <%= @candy.sugar_percentage %></li>
+        </ul>
+    </div>
+</div>

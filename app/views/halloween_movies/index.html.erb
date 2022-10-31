@@ -1,20 +1,28 @@
-<header>
-  <h1>Halloween Movies</h1>
-  <div>
-    <h3><%= link_to "Alphabetical List", halloween_movies_alphabetical_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-    <form action="/halloween_movie/search">
-      <input type="text" placeholder="Movie Name" name="title" required>
-      <button type="submit">Search</button>
-    </form>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1">Halloween Movies</h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+        <form action="/halloween_movie/search" class="is-flex">
+            <input type="text" placeholder="Movie Name" name="title" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to "Alphabetical List", halloween_movies_alphabetical_path %></h4>
+        </div>
+    </div>
 </header>
-<table>
-  <% @halloween_movies.each do |halloween_movie| %>
-    <tr>
-      <th><%= link_to halloween_movie.title, halloween_movie_path(halloween_movie.id) %></th>
-      <th><%= image_tag(url_for(halloween_movie.image), style: 'height:25vw;width:20vw') %></th>
-    </tr>
-  <% end %>
-</table>
-<%= paginate @halloween_movies %>
+<div class="container">
+    <table class="table">
+        <% @halloween_movies.each do |halloween_movie| %>
+        <tr>
+            <th><%= link_to halloween_movie.title, halloween_movie_path(halloween_movie.id) %></th>
+            <th><%= image_tag(url_for(halloween_movie.image), style: 'height:25vw;width:20vw') %></th>
+        </tr>
+        <% end %>
+    </table>
+    <%= paginate @halloween_movies %>
+</div>

@@ -1,56 +1,80 @@
-<header>
-  <h1>Candies</h1>
-  <div>
-    <h3><%= link_to 'Chocolate Candies', candies_chocolate_path %></h3> 
-    <h3><%= link_to 'Fruity Candy', candies_fruity_path %></h3> 
-    <h3><%= link_to 'Caramel Candies', candies_caramel_path %></h3> 
-    <h3><%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h3> 
-    <h3><%= link_to 'Nougat Candies', candies_nougat_path %></h3> 
-    <h3><%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %></h3> 
-    <h3><%= link_to 'Hard Candies', candies_hard_path %></h3> 
-    <h3><%= link_to 'Candy Bars', candies_bar_path %></h3>
-    <h3><%= link_to 'Back to All Candies', candies_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-    <form action="/candies/search">
-      <input type="text" placeholder="Candy Name" name ="candy_name">
-      <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
-      <button type="submit">Search</button>
-    </form>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1">Candies</h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+        <form action="/candies/search" class="is-flex">
+            <input type="text" placeholder="Candy Name" name="candy_name">
+            <p><%= collection_select(:candy, :sugar_percentage, Candy.all, :sugar_percentage, :sugar_percentage, {}, { :multiple => false }) %></p>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="navbar is-flex-wrap-wrap has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Chocolate Candies', candies_chocolate_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Fruity Candy', candies_fruity_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Caramel Candies', candies_caramel_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Peanuty/Almondy Candies', candies_peanuty_almondy_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Nougat Candies', candies_nougat_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Crisped Rice Wafer Candies', candies_crisped_rice_wafer_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Hard Candies', candies_hard_path %></h4> 
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Candy Bars', candies_bar_path %></h4>
+        </div>
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Back to All Candies', candies_path %></h4>
+        </div>
+    </div>
 </header>
-<% if (@candies.count > 0) %>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Chocolate</th>
-      <th>Fruity</th>
-      <th>Caramel</th>
-      <th>Peanuty/Almondy</th>
-      <th>Nougat</th>
-      <th>Crisped Rice Wafer</th>
-      <th>Hard</th>
-      <th>Bar</th>
-      <th>Sugar Percentage</th>
-    </tr>
+<div class="container">
+    <% if (@candies.count > 0) %>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Chocolate</th>
+            <th>Fruity</th>
+            <th>Caramel</th>
+            <th>Peanuty/Almondy</th>
+            <th>Nougat</th>
+            <th>Crisped Rice Wafer</th>
+            <th>Hard</th>
+            <th>Bar</th>
+            <th>Sugar Percentage</th>
+        </tr>
 
-  <% @candies.each do |candy| %>
-    <tr>
-      <td><%= link_to candy.name, candy_path(candy.id) %></td>
-      <td><%= candy.chocolate %></td>
-      <td><%= candy.fruity %></td>
-      <td><%= candy.caramel %></td>
-      <td><%= candy.peanuty_almondy %></td>
-      <td><%= candy.nougat %></td>
-      <td><%= candy.crisped_rice_wafer %></td>
-      <td><%= candy.hard %></td>
-      <td><%= candy.bar %></td>
-      <td><%= candy.sugar_percentage %></td>
-    </tr>
-  <% end %>
-  </table>
-<%= paginate @candies %>
-<% else %>
-  <h2>No Search Results</h2>
-<% end %>
+    <% @candies.each do |candy| %>
+        <tr>
+            <td><%= link_to candy.name, candy_path(candy.id) %></td>
+            <td><%= candy.chocolate %></td>
+            <td><%= candy.fruity %></td>
+            <td><%= candy.caramel %></td>
+            <td><%= candy.peanuty_almondy %></td>
+            <td><%= candy.nougat %></td>
+            <td><%= candy.crisped_rice_wafer %></td>
+            <td><%= candy.hard %></td>
+            <td><%= candy.bar %></td>
+            <td><%= candy.sugar_percentage %></td>
+        </tr>
+    <% end %>
+    </table>
+    <%= paginate @candies %>
 
+    <% else %>
+        <h3 class="title is-3">No Search Results</h3>
+    <% end %>
+</div>
 

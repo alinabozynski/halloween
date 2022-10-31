@@ -1,6 +1,6 @@
 class ImdbHorrorMoviesController < ApplicationController
   def index
-    @imdb_movies = ImdbHorrorMovie.includes(:ReleaseDate).all.all.page(params[:page])
+    @imdb_movies = ImdbHorrorMovie.includes(:ReleaseDate).all.page(params[:page])
   end
 
   def search 
@@ -12,7 +12,7 @@ class ImdbHorrorMoviesController < ApplicationController
   end
 
   def ratings
-    @all_imdb_movies = ImdbHorrorMovie.includes(:ReleaseDate).all.all.page(params[:page])
+    @all_imdb_movies = ImdbHorrorMovie.includes(:ReleaseDate).all.page(params[:page])
     @imdb_movies = @all_imdb_movies.order(rating: :desc)
   end
 end

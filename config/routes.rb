@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'home', to: 'pages#home'
-  get 'movies', to: 'pages#movies'
   get 'candies/search', to: 'candies#search' 
   get 'halloween_movie/search', to: 'halloween_movies#search'
   get 'imdb_horror_movie/search', to: 'imdb_horror_movies#search'

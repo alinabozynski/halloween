@@ -1,34 +1,42 @@
-<header>
-  <h1>Imdb Horror Movies</h1>
-  <div>
-    <h3><%= link_to 'Organized by Rating', imdb_horror_movies_ratings_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3> 
-    <form action="/imdb_horror_movie/search">
-      <input type="text" placeholder="IDMB Horror Movie Name" name="title">
-      <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
-      <button type="submit">Search</button>
-    </form>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1">Imdb Horror Movies</h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+        <form action="/imdb_horror_movie/search" class="is-flex">
+            <input type="text" placeholder="IDMB Horror Movie Name" name="title">
+            <p><%= collection_select(:ImdbHorrorMovie, :release_date, ImdbHorrorMovie.all, :release_date, :release_date, {}, { :multiple => false }) %></p>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Organize by Rating', imdb_horror_movies_ratings_path %></h4>
+        </div>
+    </div>
 </header>
-<table>
+<div class="container">
+    <table class="table">
 	<tr>
-		<th>Title</th>
-		<th>Release Date</th>
-		<th>Release Country</th>
-		<th>Rating</th>
-		<th>Run Time</th>
-		<th>Language</th>
+	    <th>Title</th>
+	    <th>Release Date</th>
+	    <th>Release Country</th>
+	    <th>Rating</th>
+	    <th>Run Time</th>
+	    <th>Language</th>
 	</tr>
 
-<% @imdb_movies.each do |imdb_movie| %>
+    <% @imdb_movies.each do |imdb_movie| %>
 	<tr>
-		<td><%= link_to imdb_movie.title, imdb_horror_movie_path(imdb_movie.id) %></td>
-		<td><%= imdb_movie.release_date %></td>	
-		<td><%= imdb_movie.release_country %></td>
-		<td><%= imdb_movie.rating %></td>
-		<td><%= imdb_movie.run_time %></td>
-		<td><%= imdb_movie.language %></td>
+	    <td><%= link_to imdb_movie.title, imdb_horror_movie_path(imdb_movie.id) %></td>
+	    <td><%= imdb_movie.release_date %></td>	
+	    <td><%= imdb_movie.release_country %></td>
+	    <td><%= imdb_movie.rating %></td>
+	    <td><%= imdb_movie.run_time %></td>
+	    <td><%= imdb_movie.language %></td>
 	</tr>
-<% end %>
-</table>
-<%= paginate @imdb_movies %>
+    <% end %>
+    </table>
+    <%= paginate @imdb_movies %>
+</div>

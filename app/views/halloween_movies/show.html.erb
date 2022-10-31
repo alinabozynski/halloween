@@ -1,8 +1,18 @@
-<header>
-  <h1><%= @halloween_movie.title %></h1>
-  <div>
-    <h3><%= link_to 'Back to All Halloween Movies', halloween_movies_path %></h3>
-    <h3><%= link_to 'Home', home_path %></h3>
-  </div>
+<header class="container has-background-grey-light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <div class="level">
+        <h1 class="title is-1"><%= @halloween_movie.title %></h1>
+        <h3 class="title is-3"><%= link_to 'Home', home_path %></h3>
+    </div>
+    <div class="navbar has-background-grey-lighter">
+        <div class="navbar-item">
+            <h4 class="title is-4"><%= link_to 'Back to All Halloween Movies', halloween_movies_path %></h4>
+        </div>
+    </div>
 </header>
-<p><%= image_tag(url_for(@halloween_movie.image), style: 'height:35vw;width:28vw') %></p>
+<div class="content">
+    <div class="container">
+        <p><%= image_tag(url_for(@halloween_movie.image), style: 'height:35vw;width:28vw') %></p>
+    </div>
+</div>
