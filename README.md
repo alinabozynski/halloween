@@ -45,5 +45,5 @@ Finally, once you see the "Yay! You're on Rails" screen, update URL to /home to 
 
 ## Trouleshooting Help
 
+* If there are issues with with running rails db:migrate or rails db:seed, run `rails db:reset` before starting the server.
 * At any point, if terminal requires an environment to be set, run `bin/rails db:environment:set RAILS_ENV=development`.
-* If there are issues with with running rails db:migrate or rails db:seed, run `rails db:reset`, then `bundle exec rails db:migrate` and `rails db:seed` before starting the server.
