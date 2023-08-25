@@ -1,5 +1,15 @@
 # Halloween
 
+Includes:
+* A database ERD with conditonals
+* Active Record Models
+* Model associations
+* Validations
+* Hierarchical collection navigation
+* Simple and Hierarchical search 
+* Member pages for data points, also displaying multi-model data
+* Validated HTML5
+
 ## Project Details:
 
 * Bundler: 2.3.23
