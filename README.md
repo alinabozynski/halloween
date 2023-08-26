@@ -1,4 +1,4 @@
-# Halloween
+# Halloween-Themed Site
 
 Includes:
 * A database ERD with conditonals
