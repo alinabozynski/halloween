@@ -25,7 +25,7 @@ Includes:
 
 ## To Run this Application
 
-Run in Windows Subsystem for Linux (Ubuntu) 
+Run in Windows Subsystem for Linux (Ubuntu) with Ruby on Rails and rbenv installed.
 
 Clone repository in WSL.
 
